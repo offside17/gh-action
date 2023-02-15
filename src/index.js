@@ -1,5 +1,6 @@
 import core from '@actions/core'
 import getLighthouseReport from './getLighthouseReport.js'
+import path from 'node:path'
 
 async function run() {
   try {

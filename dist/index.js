@@ -7315,7 +7315,10 @@ const getLighthouseReport = async ({ url, mdName, badgeStyle }) => {
 /* harmony default export */ const src_getLighthouseReport = (getLighthouseReport);
 // getLighthouseReport({ url: 'https://doscuadrados.es', mdName: 'TEMPLATE.md' })
 
+;// CONCATENATED MODULE: external "node:path"
+const external_node_path_namespaceObject = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("node:path");
 ;// CONCATENATED MODULE: ./src/index.js
+
 
 
 
@@ -7327,7 +7330,7 @@ async function run() {
     core.info(`Getting Lighthouse report for ${url}...`)
 
     const workspacePath = process.env.GITHUB_WORKSPACE
-    const mdFilePath = workspacePath ? path.join(workspacePath, mdName) : mdName
+    const mdFilePath = workspacePath ? external_node_path_namespaceObject.join(workspacePath, mdName) : mdName
 
     console.log('Getting Lighthouse report')
     await src_getLighthouseReport({ url, badgeStyle, mdName: mdFilePath })
