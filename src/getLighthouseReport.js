@@ -1,4 +1,5 @@
-import lighthouse from 'lighthouse'
+// import lighthouse from 'lighthouse'
+import lighthouse from 'lighthouse/core/index.cjs'
 import chromeLauncher from 'chrome-launcher'
 import makeBadgeSvg from './makeBadge.js'
 import updateReadme from './updateReadme.js'
