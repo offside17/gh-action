@@ -12,8 +12,9 @@ const promises_namespaceObject = __WEBPACK_EXTERNAL_createRequire(import.meta.ur
 
 
 async function run() {
-  const file = await (0,promises_namespaceObject.readFile)('./src/file.md', 'utf-8')
-  console.log(file)
+  console.log('Action lanzada')
+  // const file = await readFile('./src/file.md', 'utf-8')
+  // console.log(file)
 }
 
 run()
