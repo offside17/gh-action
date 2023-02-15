@@ -27,10 +27,11 @@ runs:
   steps:
     - name: checking out repo
       uses: actions/checkout@v3
-      env:
-        data_path: ${{ github.workspace }}
     - run: node ${{ github.action_path }}/dist/index.js
       shell: bash
+      env:
+        data_path: ${{ github.workspace }}
+        API_KEY: ${{ secrets.API_KEY }}
     # - name: Push
     #   shell: bash
     #   run: |
