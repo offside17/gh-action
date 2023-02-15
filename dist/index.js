@@ -2794,6 +2794,7 @@ async function run() {
 
   console.log('Action lanzada 1')
   console.log(data_path)
+  console.log(process.env.data_path)
   console.log('Action lanzada 2')
   // const file = await readFile('./src/file.md', 'utf-8')
   // console.log(file)
