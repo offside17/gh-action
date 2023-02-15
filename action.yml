@@ -27,10 +27,10 @@ runs:
   steps:
     - name: checking out repo
       uses: actions/checkout@v3
-    - run: node ${{ github.action_path }}/dist/index.js
-      shell: bash
       with:
         data_path: ${{ github.workspace }}
+    - run: node ${{ github.action_path }}/dist/index.js
+      shell: bash
     # - name: Push
     #   shell: bash
     #   run: |
