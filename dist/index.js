@@ -2783,9 +2783,12 @@ var __webpack_exports__ = {};
 
 ;// CONCATENATED MODULE: external "node:fs/promises"
 const promises_namespaceObject = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("node:fs/promises");
+;// CONCATENATED MODULE: external "node:path"
+const external_node_path_namespaceObject = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("node:path");
 // EXTERNAL MODULE: ./node_modules/@actions/core/lib/core.js
 var core = __nccwpck_require__(186);
 ;// CONCATENATED MODULE: ./src/index.js
+
 
 
 
@@ -2793,8 +2796,9 @@ async function run() {
   const data_path = core.getInput('data_path')
 
   console.log('Action lanzada 1')
-  console.log(process.env.GITHUB_ACTION)
+  console.log(process.env.GITHUB_PATH)
   console.log('Action lanzada 2')
+  // const filePath = path.join()
   // const file = await readFile('./src/file.md', 'utf-8')
   // console.log(file)
 }
