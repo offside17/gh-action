@@ -65,6 +65,7 @@ const getLighthouseReport = async ({ url, mdName, badgeStyle }) => {
 
   const badges = Object.entries(lighthouseReport).map(([key, value]) => {
     const percentValue = value.toFixed(2) * 100
+    console.log({ key, percentValue })
     return makeBadgeSvg({
       label: key,
       message: percentValue,

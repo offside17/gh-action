@@ -1,5 +1,4 @@
 import { readFile, writeFile } from 'node:fs/promises'
-import path from 'node:path'
 
 const START_REPLACE_STR = '<!-- lightouse-badges:start -->'
 const END_REPLACE_STR = '<!-- lightouse-badges:end -->'
@@ -13,17 +12,10 @@ const updateReadme = async ({ mdName, badgesMdText }) => {
   const currentReadme = await readFile(mdName, 'utf-8')
 
   const newReadme = currentReadme.includes(END_REPLACE_STR)
-    ? currentReadme.replace(
-        textBetweenTwoStrings(currentReadme, START_REPLACE_STR, END_REPLACE_STR),
-        replacingText
-      )
+    ? currentReadme.replace(textBetweenTwoStrings(currentReadme, START_REPLACE_STR, END_REPLACE_STR), replacingText)
     : currentReadme.replace(START_REPLACE_STR, replacingText)
 
-  const mdFilePath = process.env.GITHUB_WORKSPACE
-    ? path.join(process.env.GITHUB_WORKSPACE, mdName)
-    : mdName
-
-  await writeFile(mdFilePath, newReadme, 'utf-8')
+  await writeFile(mdName, newReadme, 'utf-8')
 }
 
 export default updateReadme

@@ -1,15 +1,25 @@
-import { readFile, writeFile } from 'node:fs/promises'
-import path from 'node:path'
 import core from '@actions/core'
+import getLighthouseReport from './getLighthouseReport.js'
 
 async function run() {
-  console.log('Action lanzada 1')
-  const workspacePath = process.env.GITHUB_WORKSPACE
+  try {
+    const badgeStyle = core.getInput('badgeStyle')
+    const mdName = core.getInput('mdName')
+    const url = core.getInput('url')
+    core.info(`Getting Lighthouse report for ${url}...`)
 
-  const filePath = path.join(workspacePath, 'file.md')
-  console.log('filePath', filePath)
-  const file = await readFile(filePath, 'utf-8')
-  console.log(file)
+    const workspacePath = process.env.GITHUB_WORKSPACE
+    const mdFilePath = workspacePath ? path.join(workspacePath, mdName) : mdName
+
+    console.log('Getting Lighthouse report')
+    await getLighthouseReport({ url, badgeStyle, mdName: mdFilePath })
+    core.info(new Date().toTimeString())
+    core.setOutput('time', new Date().toTimeString())
+  } catch (error) {
+    console.log('Error:')
+    console.log(error.message)
+    core.setFailed(error.message)
+  }
 }
 
 run()
