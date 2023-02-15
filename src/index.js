@@ -6,7 +6,7 @@ async function run() {
   console.log('Action lanzada 1')
   const workspacePath = process.env.GITHUB_WORKSPACE
 
-  const filePath = path.join(workspacePath, 'src', 'file.md')
+  const filePath = path.join(workspacePath, 'file.md')
   console.log('filePath', filePath)
   const file = await readFile(filePath, 'utf-8')
   console.log(file)
