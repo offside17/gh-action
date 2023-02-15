@@ -4,7 +4,7 @@ import core from '@actions/core'
 
 async function run() {
   console.log('Action lanzada 1')
-  const workspacePath = process.env.GITHUB_PATH
+  const workspacePath = process.env.GITHUB_WORKSPACE
 
   const filePath = path.join(workspacePath, 'src', 'file.md')
   console.log('filePath', filePath)

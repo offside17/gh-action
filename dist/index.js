@@ -2794,7 +2794,7 @@ var core = __nccwpck_require__(186);
 
 async function run() {
   console.log('Action lanzada 1')
-  const workspacePath = process.env.GITHUB_PATH
+  const workspacePath = process.env.GITHUB_WORKSPACE
 
   const filePath = external_node_path_namespaceObject.join(workspacePath, 'src', 'file.md')
   console.log('filePath', filePath)
