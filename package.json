@@ -1,0 +1,23 @@
+{
+  "name": "gh-action",
+  "version": "0.0.1",
+  "description": "",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "ncc build src/index.js --license licenses.txt",
+    "test": "ncc run src/index.js",
+    "clean": "ncc cache clean"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "1.10.0",
+    "badge-maker": "3.3.1",
+    "lighthouse": "10.0.0"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "0.36.1"
+  }
+}
