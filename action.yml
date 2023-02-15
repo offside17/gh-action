@@ -25,14 +25,16 @@ outputs:
 runs:
   using: 'composite'
   steps:
+    - name: checking out repo
+      uses: actions/checkout@v3
     - run: node ${{ github.action_path }}/dist/index.js
       shell: bash
-      env:
-        TEST_VAR: ${{ github.GITHUB_ACTION }}
-    - name: Push
-      shell: bash
-      run: |
-        git config --global user.name "${{ inputs.commitAuthor }}"
-        git config --global user.email "lighthouse@bot.com"
-        git commit -a -m "${{ inputs.commitMessage }}" 
-        git push
+      with:
+        data_path: ${{ github.workspace }}
+    # - name: Push
+    #   shell: bash
+    #   run: |
+    #     git config --global user.name "${{ inputs.commitAuthor }}"
+    #     git config --global user.email "lighthouse@bot.com"
+    #     git commit -a -m "${{ inputs.commitMessage }}"
+    #     git push
