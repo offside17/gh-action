@@ -13,7 +13,7 @@ const promises_namespaceObject = __WEBPACK_EXTERNAL_createRequire(import.meta.ur
 
 async function run() {
   console.log('Action lanzada 1')
-  console.log(env.TEST_VAR)
+  console.log(process.env.TEST_VAR)
   console.log('Action lanzada 2')
   // const file = await readFile('./src/file.md', 'utf-8')
   // console.log(file)
