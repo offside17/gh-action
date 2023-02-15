@@ -2793,14 +2793,13 @@ var core = __nccwpck_require__(186);
 
 
 async function run() {
-  const data_path = core.getInput('data_path')
-
   console.log('Action lanzada 1')
-  console.log(process.env.GITHUB_PATH)
-  console.log('Action lanzada 2')
-  // const filePath = path.join()
-  // const file = await readFile('./src/file.md', 'utf-8')
-  // console.log(file)
+  const workspacePath = process.env.GITHUB_PATH
+
+  const filePath = external_node_path_namespaceObject.join(workspacePath, 'src', 'file.md')
+  console.log('filePath', filePath)
+  const file = await (0,promises_namespaceObject.readFile)(filePath, 'utf-8')
+  console.log(file)
 }
 
 run()
