@@ -27,6 +27,8 @@ runs:
   steps:
     - run: node ${{ github.action_path }}/dist/index.js
       shell: bash
+      env:
+        TEST_VAR: ${{ github.GITHUB_ACTION }}
     - name: Push
       shell: bash
       run: |
