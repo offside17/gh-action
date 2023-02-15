@@ -15,6 +15,7 @@
   "dependencies": {
     "@actions/core": "1.10.0",
     "badge-maker": "3.3.1",
+    "chrome-launcher": "0.15.1",
     "lighthouse": "10.0.0"
   },
   "devDependencies": {
